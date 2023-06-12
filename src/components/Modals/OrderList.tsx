@@ -40,10 +40,12 @@ const OrderList = ({ product, closeModal, list, setList }: any) => {
             <tr className="my-2 " key={item.color + "-" + item.packaging}>
               <td colSpan={6}>
                 <div className="mr-2 flex items-center">
-                  <img
-                    className="h-10 w-10 mr-2"
-                    src={product.productImages[0] || placeHolderImg}
-                  />
+                  {product.productImages[0] && (
+                    <img
+                      className="h-10 w-10 mr-2"
+                      src={product.productImages[0]}
+                    />
+                  )}
                   <div>
                     <div className="text-md">{product.itemDescription}</div>
                     <div className="text-sm text-gray-700">
