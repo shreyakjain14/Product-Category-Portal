@@ -35,7 +35,9 @@ const ModalEditCart = ({ closeModal }: any) => {
               <tr className="my-10 " key={item.color + "-" + item.packaging}>
                 <td colSpan={6}>
                   <div className="mr-2 flex items-center">
-                    <img className="h-10 w-10 mr-2" src={item.imageUrl} />
+                    {item.imageUrl && (
+                      <img className="h-10 w-10 mr-2" src={item.imageUrl} />
+                    )}
                     <div>
                       <div className="text-md">{item.itemDescription}</div>
                       <div className="text-sm text-gray-700">
