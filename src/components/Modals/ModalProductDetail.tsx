@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { createPortal } from "react-dom";
-import ProductDetail from "../ProductDetail";
-import OrderList from "../OrderList";
+import ProductDetail from "./ProductDetail";
+import OrderList from "./OrderList";
 
 const ModalProductDetail = ({ product, closeModal }: any) => {
   const [list, setList] = useState([]);

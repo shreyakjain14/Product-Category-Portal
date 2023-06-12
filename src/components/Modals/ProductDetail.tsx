@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useState } from "react";
-import { ICONS_ROOT, PLACEHOLDER_IMAGE_URL } from "../utils/constants";
+import wishlistIcon from "../../assets/icons/wishlist.png";
+import placeHolderImg from "../../assets/icons/image-placeholder.svg";
 
 const ProductDetail = ({ product, setList }: any) => {
   const [price, setPrice] = useState(0);
@@ -95,6 +96,7 @@ const ProductDetail = ({ product, setList }: any) => {
         },
       ];
     });
+    setQuantity("");
   };
 
   return (
@@ -105,13 +107,13 @@ const ProductDetail = ({ product, setList }: any) => {
       <div className="flex w-96 h-72 bg-gray-100 mb-6 border border-gray-300 rounded-lg items-center justify-center pb-3 relative">
         <img
           className="absolute right-4 top-4 h-4 w-4"
-          src={ICONS_ROOT + "wishlist.png"}
-          alt="Wishlist-Icon"
+          src={wishlistIcon}
+          alt="Wishlist-icon"
         />
         <img
           className="w-40 h-40 mt-4"
           alt="product-image"
-          src={product.productImages[0] || PLACEHOLDER_IMAGE_URL}
+          src={product.productImages[0] || placeHolderImg}
         />
       </div>
       <div className="text-sm text-gray-500">#{product.productId}</div>

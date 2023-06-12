@@ -1,8 +1,8 @@
-import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { createPortal } from "react-dom";
 import { setCartItems } from "../../utils/cartSlice";
-import { ICONS_ROOT } from "../../utils/constants";
+import closeIcon from "../../assets/icons/close_icon.png";
+import crossMarkIcon from "../../assets/icons/cross-mark.png";
 
 const ModalEditCart = ({ closeModal }: any) => {
   const cartItems = useSelector((store: any) => store.cart.items);
@@ -17,11 +17,7 @@ const ModalEditCart = ({ closeModal }: any) => {
     <div className="absolute top-0 bottom-0 left-0 right-0 bg-black/70 ">
       <div className="absolute right-0 bottom-0 top-0 w-3/4 bg-white z-10 p-4">
         <button onClick={closeModal} className="absolute right-6 top-6 ">
-          <img
-            className="w-4 h-4"
-            src={ICONS_ROOT + "close_icon.png"}
-            alt="close-icon"
-          />
+          <img className="w-4 h-4" src={closeIcon} alt="close-icon" />
         </button>
         <h1 className="text-2xl text-center underline w-full">Shopping Cart</h1>
 
@@ -63,8 +59,8 @@ const ModalEditCart = ({ closeModal }: any) => {
                   <button onClick={() => deleteItem(index)}>
                     <img
                       className="w-3 h-3"
-                      src={ICONS_ROOT + "cross-mark.png"}
-                      alt="close-icon"
+                      src={crossMarkIcon}
+                      alt="cross-mark-icon"
                     />
                   </button>
                 </td>

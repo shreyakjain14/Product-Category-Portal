@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { clearCartItems, placeOrderItems } from "../utils/cartSlice";
 import { toast } from "react-toastify";
 import ModalEditCart from "./Modals/ModalEditCart";
+import emptyCart from "../assets/icons/empty-cart.png";
 
 const MAX_ITEMS = 4;
 
@@ -45,7 +46,11 @@ const Cart = () => {
   console.log("cartItems ", cartItems);
 
   return (
-    <div className="relative m-4  bg-white rounded-lg float-right max-md:hidden flex-grow">
+    <div
+      className={
+        "relative m-4  bg-white rounded-lg float-right max-md:hidden flex-grow "
+      }
+    >
       <table className="w-full">
         <thead className="bg-gray-100 p-2">
           <tr className="w-full">
@@ -108,7 +113,7 @@ const Cart = () => {
         </>
       )}
       {cartItems.length > 0 && (
-        <div className="w-full p-2">
+        <div className="w-full mt-6 ">
           <div className=" bg-gray-100 p-2 flex justify-between items-center ">
             <div className="text-lg">Other Instructions</div>
             <button className="text-red-700">Add &gt;</button>
@@ -178,6 +183,12 @@ const Cart = () => {
               Place Order
             </button>
           </div>
+        </div>
+      )}
+      {cartItems.length === 0 && (
+        <div className="flex h-full items-center justify-center flex-col">
+          <img src={emptyCart} className="" alt="empty-cart" />
+          <div className="mt-6"> No Items present in the cart</div>
         </div>
       )}
       {isCartEdit && <ModalEditCart closeModal={() => setIsEditCart(false)} />}

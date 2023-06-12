@@ -1,5 +1,5 @@
 import React from "react";
-import { PLACEHOLDER_IMAGE_URL } from "../utils/constants";
+import placeHolderImg from "../assets/icons/image-placeholder.svg";
 
 const SHIMMER_LENGTH: number = 10;
 
@@ -16,7 +16,7 @@ const ShimmerGeneric = () => {
             <img
               className="animate-pulse w-40 h-40"
               alt="empty-image"
-              src={PLACEHOLDER_IMAGE_URL}
+              src={placeHolderImg}
             />
             <div className="animate-pulse bg-slate-300 w-4/5 h-4 bottom-10 " />
           </div>

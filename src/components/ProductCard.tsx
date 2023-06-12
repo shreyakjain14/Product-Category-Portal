@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import ModalProductDetail from "./Modals/ModalProductDetail";
-import { ICONS_ROOT, PLACEHOLDER_IMAGE_URL } from "../utils/constants";
+import wishlistIcon from "../assets/icons/wishlist.png";
+import placeHolderImg from "../assets/icons/image-placeholder.svg";
 
 const ProductCard = ({ product }: any) => {
   console.log(product);
@@ -14,13 +15,13 @@ const ProductCard = ({ product }: any) => {
       >
         <img
           className="absolute right-4 top-4 h-4 w-4"
-          src={ICONS_ROOT + "wishlist.png"}
+          src={wishlistIcon}
           alt="Wishlist-Icon"
         />
         <img
           className="w-40 h-40 mt-4"
           alt="empty-image"
-          src={product.productImages[0] || PLACEHOLDER_IMAGE_URL}
+          src={product.productImages[0] || placeHolderImg}
         />
         <div className="bottom-10 ">{product.itemDescription}</div>
       </button>

@@ -1,6 +1,8 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
-import { ICONS_ROOT, LOGO_URL } from "../utils/constants";
+import { LOGO_URL } from "../utils/constants";
+import dashboardIcon from "../assets/icons/dashboard_icon.png";
+import allProductsIcon from "../assets/icons/all-products.png";
 
 const SideBar = () => {
   return (
@@ -9,7 +11,7 @@ const SideBar = () => {
         <img className="h-8 mr-4 " src={LOGO_URL} alt="website-log" /> A.T. Inks
       </div>
       <div className="flex items-center p-3">
-        <img src={ICONS_ROOT + "dashboard_icon.png"} className="mr-2" />
+        <img src={dashboardIcon} className="mr-2" />
         Dashboard
       </div>
       <div className="flex items-center p-3">
@@ -20,20 +22,20 @@ const SideBar = () => {
             (isActive ? "text-red-900 bg-red-300 p-3" : "")
           }
         >
-          <img src={ICONS_ROOT + "all-products.png"} className="mr-2 h-8" />
+          <img src={allProductsIcon} className="mr-2 h-8" />
           All Products
         </NavLink>
       </div>
       <div className="flex items-center p-3">
-        <img src={ICONS_ROOT + "dashboard_icon.png"} className="mr-2" />
+        <img src={allProductsIcon} className="mr-2 h-8 w-8" />
         Orders
       </div>
       <div className="flex items-center p-3">
-        <img src={ICONS_ROOT + "dashboard_icon.png"} className="mr-2" />
+        <img src={allProductsIcon} className="mr-2 h-8 w-8" />
         Favourites
       </div>
       <div className="flex items-center p-3">
-        <img src={ICONS_ROOT + "dashboard_icon.png"} className="mr-2" />
+        <img src={allProductsIcon} className="mr-2 h-8 w-8" />
         New Arrival
       </div>
     </div>

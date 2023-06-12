@@ -1,6 +1,3 @@
-export const ASSETS_ROOT = "./assets/";
-export const ICONS_ROOT = ASSETS_ROOT + "icons/";
-export const PLACEHOLDER_IMAGE_URL = ICONS_ROOT + "image-placeholder.svg";
 export const USER_IMAGE_URL =
   "https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png";
 

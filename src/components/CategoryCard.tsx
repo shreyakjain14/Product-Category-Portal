@@ -1,6 +1,4 @@
-import React from "react";
-import { PLACEHOLDER_IMAGE_URL } from "../utils/constants";
-// import { Category } from "../models/category";
+import placeHolderImg from "../assets/icons/image-placeholder.svg";
 
 const CategoryCard = ({
   category,
@@ -19,10 +17,7 @@ const CategoryCard = ({
       }
       onClick={onClick}
     >
-      <img
-        className="w-40 h-40 p-2"
-        src={categoryImageURL || PLACEHOLDER_IMAGE_URL}
-      />
+      <img className="w-40 h-40 p-2" src={categoryImageURL || placeHolderImg} />
       <div
         className={
           "absolute text-center mx-auto text-white bottom-" +

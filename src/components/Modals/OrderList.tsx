@@ -1,7 +1,9 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { addItemsToCart } from "../utils/cartSlice";
-import { ICONS_ROOT, PLACEHOLDER_IMAGE_URL } from "../utils/constants";
+import { addItemsToCart } from "../../utils/cartSlice";
+import placeHolderImg from "../../assets/icons/image-placeholder.svg";
+import closeIcon from "../../assets/icons/close_icon.png";
+import crossMark from "../../assets/icons/cross-mark.png";
 
 const OrderList = ({ product, closeModal, list, setList }: any) => {
   const dispatch = useDispatch();
@@ -23,11 +25,7 @@ const OrderList = ({ product, closeModal, list, setList }: any) => {
         Order List
       </h2>
       <button onClick={closeModal} className="absolute right-6 top-6 ">
-        <img
-          className="w-4 h-4"
-          src={ICONS_ROOT + "close_icon.png"}
-          alt="close-icon"
-        />
+        <img className="w-4 h-4" src={closeIcon} alt="close-icon" />
       </button>
       <table className="w-full mt-4">
         <thead className="bg-gray-100 p-2">
@@ -44,7 +42,7 @@ const OrderList = ({ product, closeModal, list, setList }: any) => {
                 <div className="mr-2 flex items-center">
                   <img
                     className="h-10 w-10 mr-2"
-                    src={product.productImages[0] || PLACEHOLDER_IMAGE_URL}
+                    src={product.productImages[0] || placeHolderImg}
                   />
                   <div>
                     <div className="text-md">{product.itemDescription}</div>
@@ -64,11 +62,7 @@ const OrderList = ({ product, closeModal, list, setList }: any) => {
                     {item.quantity * item.price}
                   </div>
                   <button onClick={() => deleteItem(index)}>
-                    <img
-                      className="w-3 h-3"
-                      src={ICONS_ROOT + "cross-mark.png"}
-                      alt="close-icon"
-                    />
+                    <img className="w-3 h-3" src={crossMark} alt="close-icon" />
                   </button>
                 </div>
               </td>
